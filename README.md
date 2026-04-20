@@ -4,6 +4,7 @@
     length of each phase is 120 seconds
     code starting the phase (clicking a button)
 Phase 1: Desert
+
     picture of location
     four questions
     as timer hits a certain number, temperature rises to a certain number (display temp but dont display time)
