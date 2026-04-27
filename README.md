@@ -19,13 +19,9 @@ Phase 1: Desert
     if bomb goes off in this phase, the heat has "claimed you" becuase of overheating
     completion picture
 Phase 2: jungle
-    as timer goes down, a tropical disease starts to spread in you (display the percentage of your body taken over not the timer)
-    picture of location
-    Answer choices 
-    Jaguar
-    monkey
-    Poison dart frog
-    Toucan
+    Which animal has over 200 species? (monkey)
+You run into a troop of monkeys. They are trying to find someone to help them save their species, but you need to prove you are educated. Enter the number of monkey species there are in the world to prove you support them.(334) convert to binary (11001000)
+
 
     Which animal has over 200 species? (monkey)
     1. You run into a troop of monkeys. They are trying to find someone to help them save their species, but you need to prove you are educated. Look up and enter the number of monkey species there are in the world to prove you support them.(334)
@@ -43,6 +39,7 @@ Phase 3: Rain forest
     Sloth 
     4. Which rainforest animal is super strong, lives in family groups led by a “silverback?
     Gorilla 
+
 Phase 4: sea
     as timer goes down you have less air to breathe (display time left until you run out of air)
     1. Which animal has bright blue to blue-green blood? (horseshoe crab)
