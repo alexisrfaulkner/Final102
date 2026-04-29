@@ -146,7 +146,8 @@ button_target = genButtonTarget()
 # set the bomb's LCD bootup text
 #melissa
 if active_phases == 4:
-    boot_text = f"\n"\
+    boot_text = f"Based on the 30-day simulation, which species still\n maintains a positive hydration balance (> 0 L)\n at the end of the investigation period?\n"\
+
 # Melina
 elif active_phases == 3:
     boot_text = f"\n"\
