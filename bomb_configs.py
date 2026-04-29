@@ -97,9 +97,14 @@ def genTogglesTarget():
     return 20
 
 def genWiresTarget():
-    # Create your own logic of making a target number for wires
-    # TODO
-    return 5
+    # hydration values for desert animals
+    hydration_values = [5, 2, -1, -3]
+    
+    # convert to ON (1) / OFF (0)
+    target = [1 if h > 0 else 0 for h in hydration_values]
+    
+    return target
+    
 # generates the keypad combination from a keyword and rotation key
 def genKeypadTarget():
     # Create your own logic of making a keypad combination number if needed
