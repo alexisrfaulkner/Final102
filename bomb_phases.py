@@ -252,7 +252,13 @@ class Wires(PhaseThread):
             # check solution  
             if self._value == self._target:
                 self._defused = True
-                self._running = False  
+                self._timer._interval = 1
+                self._timer._value = 90
+                self._running = False
+                
+            else:
+                #self._
+                pass
      
             sleep(0.1)
     
