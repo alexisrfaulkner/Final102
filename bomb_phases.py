@@ -69,15 +69,20 @@ class Lcd(Frame):
             # the quit button
             self._bquit = tkinter.Button(self, bg="red", fg="white", font=("Courier New", 18), text="Quit", anchor=CENTER, command=self.quit)
             self._bquit.grid(row=6, column=2, pady=40)
-<<<<<<< HEAD
-#         #melissa
-#         if active_phases = 4:
-#         #sienna
-#         if active_phases = 3:
-#         #melina
-#         if active_phases = 2:
-#         #lexi
-#         if active_phases = 1:
+
+
+        #melissa
+        if active_phases = 4:
+            
+        #melina
+        if active_phases = 3:
+            
+        #sienna
+        if active_phases = 2:
+            
+        #lexi
+        if active_phases = 1:
+
     # lets us pause/unpause the timer (7-segment display)
     def setTimer(self, timer):
         self._timer = timer
