@@ -36,7 +36,7 @@ def setup_phases():
     # setup the jumper wires thread
     wires = Wires(component_wires, wires_target)
     # setup the pushbutton thread
-    button = Button(component_button_state, component_button_RGB, button_target, button_color, timer)
+    button = Button(component_button_state, component_button_RGB, button_target, "B", timer)
     # bind the pushbutton to the LCD GUI so that its LED can be turned off when we quit
     gui.setButton(button)
     # setup the toggle switches thread
@@ -100,10 +100,10 @@ def check_phases():
             button._running = False
             active_phases -= 1
         # the phase has failed -> strike
-        elif (button._failed):
-            strike()
-            # reset the button
-            button._failed = False
+#         elif (button._failed):
+#             strike()
+#             # reset the button
+#             button._failed = False
     # check the toggles
     if (toggles._running):
         # update the GUI
@@ -140,11 +140,11 @@ def check_phases():
     gui.after(100, check_phases)
 
 # handles a strike
-def strike():
-    global strikes_left
-    
-    # note the strike
-    strikes_left -= 1
+# def strike():
+#     global strikes_left
+#     
+#     # note the strike
+#     strikes_left -= 1
 
 # turns off the bomb
 def turn_off():
@@ -170,9 +170,6 @@ def turn_off():
 window = Tk()
 gui = Lcd(window)
 
-# initialize the bomb strikes and active phases (i.e., not yet defused)
-strikes_left = NUM_STRIKES
-active_phases = NUM_PHASES
 
 # "boot" the bomb
 gui.after(100, bootup)

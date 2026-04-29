@@ -12,6 +12,10 @@ COUNTDOWN = 300      # the initial bomb countdown value (seconds)
 NUM_STRIKES = 5      # the total strikes allowed before the bomb "explodes"
 NUM_PHASES = 4       # the total number of initial active bomb phases
 
+# initialize the bomb strikes and active phases (i.e., not yet defused)
+#strikes_left = NUM_STRIKES
+active_phases = NUM_PHASES
+
 # imports
 from random import randint, shuffle, choice
 from string import ascii_uppercase
@@ -120,12 +124,15 @@ def genButtonTarget():
     # Create your own logic of making a Button target
     # appropriately set the target (R is None)
     b_target = None
-    # G is the first numeric digit in the serial number
+#     if(button_color == b_target):
+#         return b_target
+#     b_target = None
+#     # G is the first numeric digit in the serial number
     if (button_color == "G"):
-        b_target = [ n for n in serial if n.isdigit() ][0]
+        return [ n for n in serial if n.isdigit() ][0]
     # B is the last numeric digit in the serial number
     elif (button_color == "B"):
-        b_target = [ n for n in serial if n.isdigit() ][-1]
+        return [ n for n in serial if n.isdigit() ][-1]
 
     return b_target
 
@@ -137,6 +144,18 @@ keypad_target = genKeypadTarget()
 button_target = genButtonTarget()
 
 # set the bomb's LCD bootup text
+#melissa
+if active_phases == 4:
+    boot_text = f"\n"\
+# Melina
+elif active_phases == 3:
+    boot_text = f"\n"\
+#sienna
+elif active_phases == 2:
+    boot_text = f"\n"\
+#lexi
+else:
+    boot_text = f
 boot_text = f"*Add your own text here specific to your bomb*\n"\
             f"*Serial number: {serial}\n"\
             

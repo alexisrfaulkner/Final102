@@ -284,24 +284,29 @@ class Button(PhaseThread):
         self._rgb[2].value = False if self._color == "B" else True
         while (self._running):
             # get the pushbutton's state
+            
+            
+            # if the time ends in 5 change the color
+        
+            t = (self._timer._value // 2) % 3
+            c = ["R","G","B"]
+            self._color = c[t]
+            
             self._value = self._component.value
             # it is pressed
             if (self._value):
                 # note it
                 self._pressed = True
-            # it is released
-            else:
-                # was it previously pressed?
-                if (self._pressed):
-                    # check the release parameters
-                    # for R, nothing else is needed
-                    # for G or B, a specific digit must be in the timer (sec) when released
-                    if (not self._target or self._target in self._timer._sec):
-                        self._defused = True
-                    else:
-                        self._failed = True
-                    # note that the pushbutton was released
-                    self._pressed = False
+                self._timer.pause()
+                ##### Check the color
+                if self._color == "R":
+                    self._defused = True
+                    self._running = False
+                else:
+                    self._failed = True
+                    self._timer._interval -= 0.3
+                # ,,, if color correct then yay!
+                # ... if not then buzz/penalty/whatever
             sleep(0.1)
 
     # returns the pushbutton's state as a string
