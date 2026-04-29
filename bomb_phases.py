@@ -71,10 +71,13 @@ class Lcd(Frame):
             self._bquit.grid(row=6, column=2, pady=40)
         #melissa
         if active_phases = 4:
-        #sienna
-        if active_phases = 3:
+            
         #melina
+        if active_phases = 3:
+            
+        #sienna
         if active_phases = 2:
+            
         #lexi
         if active_phases = 1:
     # lets us pause/unpause the timer (7-segment display)
