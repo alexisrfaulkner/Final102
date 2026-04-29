@@ -44,7 +44,6 @@ class Lcd(Frame):
     # sets up the LCD GUI
     def setup(self):
         
-        
         # the timer
         self._ltimer = Label(self, bg="black", fg="#00ff00", font=("Courier New", 18), text="Time left: ")
         self._ltimer.grid(row=1, column=0, columnspan=3, sticky=W)
@@ -240,15 +239,10 @@ class Wires(PhaseThread):
             # get current wire states from GUI
             self._value = self._component.get_state()
             
-            # correct solution 
+            # check solution  
             if self._value == self._target:
                 self._defused = True
-                self._running = False 
-                
-            # wrong full configuration = strike
-            elif any(self._value[i] != self._target[i] for i in range(len(self._value))):
-                self._failed = True
-                self._running = False
+                self._running = False  
      
             sleep(0.1)
     
