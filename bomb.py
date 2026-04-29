@@ -73,8 +73,8 @@ def check_phases():
             keypad._running = False
             active_phases -= 1
         # the phase has failed -> strike
-        elif (keypad._failed):
-            strike()
+#         elif (keypad._failed):
+#             strike()
             # reset the keypad
             keypad._failed = False
             keypad._value = ""
@@ -87,8 +87,8 @@ def check_phases():
             wires._running = False
             active_phases -= 1
         # the phase has failed -> strike
-        elif (wires._failed):
-            strike()
+#         elif (wires._failed):
+#             strike()
             # reset the wires
             wires._failed = False
     # check the button
