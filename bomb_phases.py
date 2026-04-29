@@ -43,6 +43,8 @@ class Lcd(Frame):
 
     # sets up the LCD GUI
     def setup(self):
+        
+        
         # the timer
         self._ltimer = Label(self, bg="black", fg="#00ff00", font=("Courier New", 18), text="Time left: ")
         self._ltimer.grid(row=1, column=0, columnspan=3, sticky=W)
@@ -232,16 +234,31 @@ class Wires(PhaseThread):
 
     # runs the thread
     def run(self):
-        # TODO
-        pass
-
-    # returns the jumper wires state as a string
+        self._running = True
+        
+        while self._running:
+            # get current wire states from GUI
+            self._value = self._component.get_state()
+            
+            # correct solution 
+            if self._value == self._target:
+                self._defused = True
+                self._running = False 
+                
+            # wrong full configuration = strike
+            elif any(self._value[i] != self._target[i] for i in range(len(self._value))):
+                self._failed = True
+                self._running = False
+     
+            sleep(0.1)
+    
+    # returns the jumper wires state as a string 
     def __str__(self):
         if (self._defused):
             return "DEFUSED"
         else:
-            # TODO
-            pass
+            return str(self._value)
+        
 
 # the pushbutton phase
 class Button(PhaseThread):
