@@ -9,7 +9,7 @@ DEBUG = False        # debug mode?
 RPi = False           # is this running on the RPi?
 SHOW_BUTTONS = False # show the Pause and Quit buttons on the main LCD GUI?
 COUNTDOWN = 300      # the initial bomb countdown value (seconds)
-NUM_STRIKES = 5      # the total strikes allowed before the bomb "explodes"
+# NUM_STRIKES = 5      # the total strikes allowed before the bomb "explodes"
 NUM_PHASES = 4       # the total number of initial active bomb phases
 
 # initialize the bomb strikes and active phases (i.e., not yet defused)
@@ -156,6 +156,5 @@ elif active_phases == 2:
 #lexi
 else:
     boot_text = f
-boot_text = f"*Add your own text here specific to your bomb*\n"\
-            f"*Serial number: {serial}\n"\
+boot_text = f"You start swimming and find a horseshoe crab stuck under a rock. \nYou want to help but need to mentally prepare yourself to see the blood if anything goes wrong. \nSet the button to the color you will not see from a horseshoe crab’s blood.\n"\
             
