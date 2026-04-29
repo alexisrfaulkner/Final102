@@ -69,6 +69,7 @@ class Lcd(Frame):
             # the quit button
             self._bquit = tkinter.Button(self, bg="red", fg="white", font=("Courier New", 18), text="Quit", anchor=CENTER, command=self.quit)
             self._bquit.grid(row=6, column=2, pady=40)
+<<<<<<< HEAD
 #         #melissa
 #         if active_phases = 4:
 #         #sienna
@@ -250,7 +251,13 @@ class Wires(PhaseThread):
             # check solution  
             if self._value == self._target:
                 self._defused = True
-                self._running = False  
+                self._timer._interval = 1
+                self._timer._value = 90
+                self._running = False
+                
+            else:
+                #self._
+                pass
      
             sleep(0.1)
     
