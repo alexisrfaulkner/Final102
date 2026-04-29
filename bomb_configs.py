@@ -142,6 +142,7 @@ toggles_target = genTogglesTarget()
 wires_target = genWiresTarget()
 keypad_target = genKeypadTarget()
 button_target = genButtonTarget()
+jungle_target = "101011000"
 
 # set the bomb's LCD bootup text
 #melissa
