@@ -14,7 +14,15 @@ from bomb_phases import *
 ###########
 # generates the bootup sequence on the LCD
 def bootup(n=0):
-    gui._lscroll["text"] = boot_text.replace("\x00", "")
+    gui._lscroll["text"] = (
+    "JUNGLE PHASE:\n\n"
+    "You run into a troop of monkeys.\n"
+    "They are trying to find someone to help save their species.\n"
+    "To prove you are educated, you must answer their question.\n\n"
+    "Enter the number of monkey species in the world.\n"
+    "Then convert it to BINARY using the keypad.\n\n"
+    "HURRY... a predator is getting closer.\n"
+)
     # configure the remaining GUI widgets
     gui.setup()
     # setup the phase threads, execute them, and check their statuses
@@ -56,7 +64,7 @@ def check_phases():
     # check the timer
     if (timer._running):
         # update the GUI
-        gui._ltimer["text"] = f"Time left: {timer}"
+        gui._ltimer["text"] = f"Predator Distance: {timer}"
     else:
         # the countdown has expired -> explode!
         # turn off the bomb and render the conclusion GUI
@@ -67,7 +75,7 @@ def check_phases():
     # check the keypad
     if (keypad._running):
         # update the GUI
-        gui._lkeypad["text"] = f"Combination: {keypad}"
+        gui._lkeypad["text"] = f"Your Answer (Binary): {keypad}"
         # the phase is defused -> stop the thread
         if (keypad._defused):
             keypad._running = False
