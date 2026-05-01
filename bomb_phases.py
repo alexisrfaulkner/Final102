@@ -92,9 +92,13 @@ class Lcd(Frame):
             
         #sienna
         if active_phases == 2:
+            #to do
+            pass
             
         #lexi
         if active_phases == 1:
+            #to 
+            pass
 
     # lets us pause/unpause the timer (7-segment display)
     def setTimer(self, timer):
