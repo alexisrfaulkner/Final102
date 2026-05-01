@@ -151,7 +151,13 @@ if active_phases == 4:
 
 # Melina
 elif active_phases == 3:
-    boot_text = f"\n"\
+    boot_text = f"JUNGLE PHASE:\n\n"
+    "You run into a troop of monkeys.\n"
+    "They are trying to find someone to help save their species.\n"
+    "To prove you are educated, you must answer their question.\n\n"
+    "Enter the number of monkey species in the world.\n"
+    "Then convert it to BINARY using the keypad.\n\n"
+    "HURRY... a predator is getting closer.\n\n"
 #sienna
 elif active_phases == 2:
     boot_text = f"\n"\
