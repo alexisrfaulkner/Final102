@@ -46,15 +46,6 @@ class Lcd(Frame):
         
         # the timer
         self._ltimer = Label(self, bg="black", fg="#00ff00", font=("Courier New", 18), text="Time left: ")
-        # Load jungle image
-        self.jungle_img = Image.open("jungle.jpeg")
-        self.jungle_img = self.jungle_img.resize((400, 250))
-        self.jungle_photo = ImageTk.PhotoImage(self.jungle_img)
-
-        # Display image
-        self._limage = Label(self, image=self.jungle_photo, bg="black")
-        self._limage.grid(row=0, column=1)
-        self._ltimer.grid(row=1, column=0, columnspan=3, sticky=W)
         # the keypad passphrase
 #         self._lkeypad = Label(self, bg="black", fg="#00ff00", font=("Courier New", 18), text="Keypad phase: ")
 #         self._lkeypad.grid(row=2, column=0, columnspan=3, sticky=W)
@@ -89,6 +80,15 @@ class Lcd(Frame):
             
         #melina
         if active_phases == 3:
+            # Load jungle image
+            self.jungle_img = Image.open("jungle.jpeg")
+            self.jungle_img = self.jungle_img.resize((400, 250))
+            self.jungle_photo = ImageTk.PhotoImage(self.jungle_img)
+
+            # Display image
+            self._limage = Label(self, image=self.jungle_photo, bg="black")
+            self._limage.grid(row=0, column=1)
+            self._ltimer.grid(row=1, column=0, columnspan=3, sticky=W)
             
         #sienna
         if active_phases == 2:
