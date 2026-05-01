@@ -73,6 +73,11 @@ class Lcd(Frame):
 
         #melissa
         if active_phases == 4:
+            self.phase_photo = PhotoImage(file='desert.gif')
+            
+            self._image = Label(self, image=self.phase_photo, bg='black')
+            self._limage.grid(row=0, column=1, pady=10)
+            
             
         #melina
         if active_phases == 3:
