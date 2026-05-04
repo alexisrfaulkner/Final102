@@ -87,7 +87,7 @@ class Lcd(Frame):
 
             # Display image
             self._limage = Label(self, image=self.jungle_photo, bg="black")
-            self._limage.grid(row=0, column=1)
+            self._limage.grid(row=0, column=2)
             self._ltimer.grid(row=1, column=0, columnspan=3, sticky=W)
             
         # sienna
@@ -99,7 +99,7 @@ class Lcd(Frame):
 
             # Display image
             self._image = Label(self, image=self.rainforest_photo, bg="black")
-            self._image.grid(row=0, column=1)
+            self._image.grid(row=0, column=2)
 
     # Timer placement
 #     self._timer.grid(row=1, column=0, columnspan=3, sticky=W)
