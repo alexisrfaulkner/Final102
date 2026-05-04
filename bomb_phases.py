@@ -102,7 +102,7 @@ class Lcd(Frame):
             self._image.grid(row=0, column=1)
 
     # Timer placement
-    self._timer.grid(row=1, column=0, columnspan=3, sticky=W)
+#     self._timer.grid(row=1, column=0, columnspan=3, sticky=W)
 
     # lets us pause/unpause the timer (7-segment display)
     def setTimer(self, timer):
