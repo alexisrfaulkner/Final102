@@ -101,11 +101,9 @@ def genTogglesTarget():
     return 20
 
 def genWiresTarget():
-    # hydration values for desert animals
-    hydration_values = [5, 2, -1, -3]
     
-    # convert to ON (1) / OFF (0)
-    target = [1 if h > 0 else 0 for h in hydration_values]
+    # OFF, ON, ON, OFF, OFF
+    target = [False, True, True, False, False]
     
     return target
     
