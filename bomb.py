@@ -109,6 +109,12 @@ def check_phases():
             gui._limage = Label(gui, image=gui.jungle_photo, bg="black")
             gui._limage.grid(row=0, column=2)
             gui._ltimer.grid(row=1, column=0, columnspan=3, sticky=W)
+            
+            gui._lscroll["text"] = (
+            "BANANA\n"
+            "BANANA\n"
+
+            )
 
         # the phase has failed -> strike
 #         elif (wires._failed):
@@ -137,6 +143,11 @@ def check_phases():
             toggles._running = False
             active_phases -= 1
             
+            
+            self.phase_photo = ImageTk.PhotoImage(file='sea.gif')
+            
+            self._image = Label(self, image=self.phase_photo, bg='black')
+            self._image.grid(row=0, column=2, pady=10)
             #Final Picture gui goes here !!!!
             ## Put Sea.gif here
             
@@ -145,7 +156,7 @@ def check_phases():
 #         elif (toggles._failed):
 #             strike()
             # reset the toggles
-            toggles._failed = False
+        
 
     # note the strikes on the GUI
 #     gui._lstrikes["text"] = f"Strikes left: {strikes_left}"
