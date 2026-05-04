@@ -74,13 +74,10 @@ def check_phases():
         # don't check any more phases
         return
     # check the keypad
-    # check the keypad
+    
     if (keypad._running):
-        if active_phases == 3:
-            if keypad.gui_active == False:
-                gui.setup()
-                keypad.gui_active = True
-            gui._lkeypad["text"] = "Your Answer (Binary): " + str(keypad)
+        #if active_phases == 3:
+            #gui._lkeypad["text"] = "Your Answer (Binary): " + str(keypad)
 
         if (keypad._defused):
             keypad._running = False
@@ -97,7 +94,17 @@ def check_phases():
         if (wires._defused):
             wires._running = False
             active_phases -= 1
-            gui.setup()
+            
+            #update the gui
+            gui.jungle_img = Image.open("jungle.jpeg")
+            gui.jungle_img = gui.jungle_img.resize((400, 250))
+            gui.jungle_photo = ImageTk.PhotoImage(gui.jungle_img)
+
+            # Display image
+            gui._limage = Label(gui, image=gui.jungle_photo, bg="black")
+            gui._limage.grid(row=0, column=2)
+            gui._ltimer.grid(row=1, column=0, columnspan=3, sticky=W)
+
         # the phase has failed -> strike
 #         elif (wires._failed):
 #             strike()
