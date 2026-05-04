@@ -228,7 +228,6 @@ class Keypad(PhaseThread):
         super().__init__(name, component, target)
         # the default value is an empty string
         self._value = ""
-        self.gui_active = False
 
     # runs the thread
     def run(self):

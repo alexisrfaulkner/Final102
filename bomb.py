@@ -97,6 +97,7 @@ def check_phases():
         if (wires._defused):
             wires._running = False
             active_phases -= 1
+            gui.setup()
         # the phase has failed -> strike
 #         elif (wires._failed):
 #             strike()
