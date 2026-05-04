@@ -228,6 +228,7 @@ class Keypad(PhaseThread):
         super().__init__(name, component, target)
         # the default value is an empty string
         self._value = ""
+        self.gui_active = False
 
     # runs the thread
     def run(self):
@@ -274,7 +275,7 @@ class Wires(PhaseThread):
         while self._running:
             # get current wire states from GUI
             self._value = []
-            for ind in range(5):
+            for i in range(5):
                 self._value.append(self._component[i].value)
             
             

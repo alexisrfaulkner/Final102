@@ -62,7 +62,7 @@ def check_phases():
     # check the timer
     if (timer._running):
         # update the GUI
-        if self.active_phases == 3:
+        if active_phases == 3:
             gui._ltimer["text"] = f"Predator Distance: {timer}"
         else:
             gui._ltimer["text"] = f"Time left: {timer}"
@@ -76,7 +76,11 @@ def check_phases():
     # check the keypad
     # check the keypad
     if (keypad._running):
-        gui._lkeypad["text"] = "Your Answer (Binary): " + str(keypad)
+        if active_phases == 3:
+            if keypad.gui_active == False:
+                gui.setup()
+                keypad.gui_active = True
+            gui._lkeypad["text"] = "Your Answer (Binary): " + str(keypad)
 
         if (keypad._defused):
             keypad._running = False
@@ -101,7 +105,7 @@ def check_phases():
     # check the button
     if (button._running):
         # update the GUI
-        gui._lbutton["text"] = f"Button: {button}"
+       # gui._lbutton["text"] = f"Button: {button}"
         # the phase is defused -> stop the thread
         if (button._defused):
             button._running = False
