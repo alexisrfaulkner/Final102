@@ -101,8 +101,8 @@ def genTogglesTarget():
 
 def genWiresTarget():
     
-    # OFF, ON, ON, OFF, OFF
-    target = [False, True, True, False, False]
+    # OFF, ON, OFF, OFF, ON
+    target = [False, True, False, False, True]
     
     return target
     
