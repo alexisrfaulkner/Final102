@@ -15,8 +15,9 @@ from bomb_phases import *
 # generates the bootup sequence on the LCD
 def bootup(n=0):
     gui._lscroll["text"] = (
-    "Based on the 30-day simulation, which species still\n"
-    "maintains a positive hydration balance (> 0 L)\n"
+    "Based on the 30-day simulation,\n"
+    "which species still maintains\n"
+    "a positive hydration balance\n"
     "at the end of the investigation period?\n"
 )
 
