@@ -161,12 +161,13 @@ elif active_phases == 3:
 #sienna
 elif active_phases == 2:
     boot_text = f"RAINFOREST PHASE:\n\n"
-    "You are in the deep rainforest.\n"
-    "Your arm burns after touching a strange plant.\n\n"
-    "A capybara appears and makes a strange sound.\n"
+    "You are in the rainforest and your arm starts hurting after touching a plant.\n"
+    "You are alone, but a nearby capybara may help you find water. \n\n"
+    "You cannot speak so you must communicate using numbers.\n"
     "The capybara is trying to say: HELP.\n\n"
-    "Convert HELP into ASCII, then into 4-bit binary.\n"
-    "Enter each 4-bit chunk using the toggles.\n\n"
+    "Convert HELP into binary.\n"
+    "Use only the last 4 bits of each letter. \n\n"
+    "Set the toggle switches to match each 4-bit value in order to proceed.\n"
     
     
 #lexi
