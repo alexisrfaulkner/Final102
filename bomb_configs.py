@@ -167,8 +167,7 @@ elif active_phases == 2:
     "The capybara is trying to say: HELP.\n\n"
     "Convert HELP into binary.\n"
     "Use only the last 4 bits of each letter. \n\n"
-    "Set the toggle switches to match each 4-bit value in order to proceed.\n"
-    
+    "Set the toggle switches to match each 4-bit value in order to proceed.\n"  
     
 #lexi
 else:
