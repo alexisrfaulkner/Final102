@@ -60,8 +60,6 @@ class Lcd(Frame):
 #         self._ltoggles = Label(self, bg="black", fg="#00ff00", font=("Courier New", 18), text="Toggles phase: ")
 #         self._ltoggles.grid(row=5, column=0, columnspan=2, sticky=W)
         # the strikes left
-        self._lstrikes = Label(self, bg="black", fg="#00ff00", font=("Courier New", 18), text="Strikes left: ")
-        self._lstrikes.grid(row=5, column=2, sticky=W)
         if (SHOW_BUTTONS):
             # the pause button (pauses the timer)
             self._bpause = tkinter.Button(self, bg="red", fg="white", font=("Courier New", 18), text="Pause", anchor=CENTER, command=self.pause)
@@ -76,7 +74,7 @@ class Lcd(Frame):
             self.phase_photo = ImageTk.PhotoImage(file='desert.gif')
             
             self._image = Label(self, image=self.phase_photo, bg='black')
-            self._image.grid(row=0, column=1, pady=10)
+            self._image.grid(row=0, column=2, pady=10)
             
             
         #melina
