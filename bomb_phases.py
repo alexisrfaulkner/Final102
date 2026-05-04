@@ -270,9 +270,15 @@ class Wires(PhaseThread):
     def run(self):
         self._running = True
         
+        
         while self._running:
             # get current wire states from GUI
-            self._value = self._component.get_state()
+            self._value = []
+            for ind in range(5):
+                self._value.append(self._component[i].value)
+            
+            
+            print(self._value)
             
             # check solution  
             if self._value == self._target:
