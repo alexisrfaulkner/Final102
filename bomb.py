@@ -82,10 +82,15 @@ def check_phases():
         if (keypad._defused):
             keypad._running = False
             active_phases -= 1
+            # Load rainforest image
+            gui.rainforest_img = Image.open("rainforest.jpeg")
+            gui.rainforest_img = gui.rainforest_img.resize((400, 250))
+            gui.rainforest_photo = ImageTk.PhotoImage(gui.rainforest_img)
 
-        elif (keypad._failed):
-            keypad._failed = False
-            keypad._value = ""
+            # Display image
+            gui._image = Label(gui, image=gui.rainforest_photo, bg="black")
+            gui._image.grid(row=0, column=2)
+
     # check the wires
     if (wires._running):
         # update the GUI
@@ -131,6 +136,11 @@ def check_phases():
         if (toggles._defused):
             toggles._running = False
             active_phases -= 1
+            
+            #Final Picture gui goes here !!!!
+            ## Put Sea.gif here
+            
+            
         # the phase has failed -> strike
 #         elif (toggles._failed):
 #             strike()
