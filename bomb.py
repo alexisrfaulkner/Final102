@@ -62,7 +62,10 @@ def check_phases():
     # check the timer
     if (timer._running):
         # update the GUI
-        gui._ltimer["text"] = f"Predator Distance: {timer}"
+        if self.active_phases == 3:
+            gui._ltimer["text"] = f"Predator Distance: {timer}"
+        else:
+            gui._ltimer["text"] = f"Time left: {timer}"
     else:
         # the countdown has expired -> explode!
         # turn off the bomb and render the conclusion GUI
@@ -94,7 +97,7 @@ def check_phases():
 #         elif (wires._failed):
 #             strike()
             # reset the wires
-            wires._failed = False
+#             wires._failed = False
     # check the button
     if (button._running):
         # update the GUI
