@@ -145,9 +145,9 @@ jungle_target = "101011000"
 #melissa
 if active_phases == 4:
     boot_text = f"Based on the 30-day simulation,\n"
-    "which species still maintains\n"
-    "a positive hydration balance\n"
-    "at the end of the investigation period?\n"
+    "which desert animals still\n"
+    "maintain a positive hydration\n"
+    "level by day 30?\n"
     
     
 # Melina
