@@ -89,24 +89,24 @@ class Lcd(Frame):
             self._limage.grid(row=0, column=1)
             self._ltimer.grid(row=1, column=0, columnspan=3, sticky=W)
             
-# sienna
-if active_phases == 2:
-    # Load rainforest image
-    self.rainforest_img = Image.open("rainforest.jpeg")
-    self.rainforest_img = self.rainforest_img.resize((400, 250))
-    self.rainforest_photo = ImageTk.PhotoImage(self.rainforest_img)
+        # sienna
+        if active_phases == 2:
+            # Load rainforest image
+            self.rainforest_img = Image.open("rainforest.jpeg")
+            self.rainforest_img = self.rainforest_img.resize((400, 250))
+            self.rainforest_photo = ImageTk.PhotoImage(self.rainforest_img)
 
-    # Display image
-    self._image = Label(self, image=self.rainforest_photo, bg="black")
-    self._image.grid(row=0, column=1)
+            # Display image
+            self._image = Label(self, image=self.rainforest_photo, bg="black")
+            self._image.grid(row=0, column=1)
 
-    # Story text (optional but recommended)
-    self._status.set(
-        "You are in the rainforest and your arm starts hurting after touching a plant.\n"
-        "You are alone, but a capybara may help you find water.\n"
-        "You cannot speak. Send a message using binary code.\n"
-        "Enter the correct 4-digit binary code to continue."
-    )
+            # Story text (optional but recommended)
+            self._status.set(
+                "You are in the rainforest and your arm starts hurting after touching a plant.\n"
+                "You are alone, but a capybara may help you find water.\n"
+                "You cannot speak. Send a message using binary code.\n"
+                "Enter the correct 4-digit binary code to continue."
+            )
 
     # Timer placement
     self._timer.grid(row=1, column=0, columnspan=3, sticky=W)
