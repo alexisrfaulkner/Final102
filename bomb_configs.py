@@ -89,10 +89,10 @@ if (RPi):
 ###########
 # functions to generate targets for toggles/wires/keypad/Button
 ###########
-def genSerial():
-    # Create your own logic of making a serial number (if needed)
-    # TODO
-    return "B026DES"
+# def genSerial():
+#     # Create your own logic of making a serial number (if needed)
+#     # TODO
+#     return "B026DES"
 
 def genTogglesTarget():
     # Create your own logic of making a target number for toggles
@@ -102,7 +102,7 @@ def genTogglesTarget():
 def genWiresTarget():
     
     # OFF, ON, OFF, OFF, ON
-    target = [False, True, False, False, True]
+    target = [0, 1, 0, 0, 1]
     
     return target
     
