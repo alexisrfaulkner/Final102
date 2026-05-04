@@ -160,7 +160,15 @@ elif active_phases == 3:
     "HURRY... a predator is getting closer.\n\n"
 #sienna
 elif active_phases == 2:
-    boot_text = f"\n"\
+    boot_text = f"RAINFOREST PHASE:\n\n"
+    "You are in the deep rainforest.\n"
+    "Your arm burns after touching a strange plant.\n\n"
+    "A capybara appears and makes a strange sound.\n"
+    "The capybara is trying to say: HELP.\n\n"
+    "Convert HELP into ASCII, then into 4-bit binary.\n"
+    "Enter each 4-bit chunk using the toggles.\n\n"
+    
+    
 #lexi
 else:
     boot_text = f
