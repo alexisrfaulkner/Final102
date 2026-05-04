@@ -143,11 +143,7 @@ def check_phases():
             toggles._running = False
             active_phases -= 1
             
-            
-            self.phase_photo = ImageTk.PhotoImage(file='sea.gif')
-            
-            self._image = Label(self, image=self.phase_photo, bg='black')
-            self._image.grid(row=0, column=2, pady=10)
+        
             #Final Picture gui goes here !!!!
             ## Put Sea.gif here
             
