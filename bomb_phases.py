@@ -98,7 +98,7 @@ class Lcd(Frame):
         if active_phases == 1:
             self.phase_photo = PhotoImage(file='sea.gif')
             self.image = Label(self, image =self.phase_photo, bg = 'black')
-            self.limage.grif(row=0, column=1, pady=10)
+            self.image.grid(row=0, column=1, pady=10)
 
     # lets us pause/unpause the timer (7-segment display)
     def setTimer(self, timer):
