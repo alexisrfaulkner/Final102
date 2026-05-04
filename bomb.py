@@ -118,8 +118,8 @@ def check_phases():
             toggles._running = False
             active_phases -= 1
         # the phase has failed -> strike
-        elif (toggles._failed):
-            strike()
+#         elif (toggles._failed):
+#             strike()
             # reset the toggles
             toggles._failed = False
 
