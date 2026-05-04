@@ -42,7 +42,7 @@ def setup_phases():
     # setup the jumper wires thread
     wires = Wires(component_wires, wires_target)
     # setup the pushbutton thread
-    button = Button(component_button_state, component_button_RGB, button_target, "B", timer)
+    button = Button(component_button_state, component_button_RGB, "B", timer)
     # bind the pushbutton to the LCD GUI so that its LED can be turned off when we quit
     gui.setButton(button)
     # setup the toggle switches thread
@@ -62,7 +62,10 @@ def check_phases():
     # check the timer
     if (timer._running):
         # update the GUI
-        gui._ltimer["text"] = f"Predator Distance: {timer}"
+        if active_phases == 3:
+            gui._ltimer["text"] = f"Predator Distance: {timer}"
+        else:
+            gui._ltimer["text"] = f"Time left: {timer}"
     else:
         # the countdown has expired -> explode!
         # turn off the bomb and render the conclusion GUI
@@ -71,19 +74,23 @@ def check_phases():
         # don't check any more phases
         return
     # check the keypad
+    
     if (keypad._running):
-        # update the GUI
-        gui._lkeypad["text"] = f"Your Answer (Binary): {keypad}"
-        # the phase is defused -> stop the thread
+        #if active_phases == 3:
+            #gui._lkeypad["text"] = "Your Answer (Binary): " + str(keypad)
+
         if (keypad._defused):
             keypad._running = False
             active_phases -= 1
-        # the phase has failed -> strike
-#         elif (keypad._failed):
-#             strike()
-            # reset the keypad
-            keypad._failed = False
-            keypad._value = ""
+            # Load rainforest image
+            gui.rainforest_img = Image.open("rainforest.jpg")
+            gui.rainforest_img = gui.rainforest_img.resize((400, 250))
+            gui.rainforest_photo = ImageTk.PhotoImage(gui.rainforest_img)
+
+            # Display image
+            gui._image = Label(gui, image=gui.rainforest_photo, bg="black")
+            gui._image.grid(row=0, column=2)
+
     # check the wires
     if (wires._running):
         # update the GUI
@@ -92,15 +99,26 @@ def check_phases():
         if (wires._defused):
             wires._running = False
             active_phases -= 1
+            
+            #update the gui
+            gui.jungle_img = Image.open("jungle.jpeg")
+            gui.jungle_img = gui.jungle_img.resize((400, 250))
+            gui.jungle_photo = ImageTk.PhotoImage(gui.jungle_img)
+
+            # Display image
+            gui._limage = Label(gui, image=gui.jungle_photo, bg="black")
+            gui._limage.grid(row=0, column=2)
+            gui._ltimer.grid(row=1, column=0, columnspan=3, sticky=W)
+
         # the phase has failed -> strike
 #         elif (wires._failed):
 #             strike()
             # reset the wires
-            wires._failed = False
+#             wires._failed = False
     # check the button
     if (button._running):
         # update the GUI
-        gui._lbutton["text"] = f"Button: {button}"
+       # gui._lbutton["text"] = f"Button: {button}"
         # the phase is defused -> stop the thread
         if (button._defused):
             button._running = False
@@ -118,6 +136,11 @@ def check_phases():
         if (toggles._defused):
             toggles._running = False
             active_phases -= 1
+            
+            #Final Picture gui goes here !!!!
+            ## Put Sea.gif here
+            
+            
         # the phase has failed -> strike
 #         elif (toggles._failed):
 #             strike()
@@ -175,6 +198,8 @@ def turn_off():
 # initialize the LCD GUI
 window = Tk()
 gui = Lcd(window)
+# initialize the bomb strikes and active phases
+active_phases = NUM_PHASES
 
 
 # "boot" the bomb

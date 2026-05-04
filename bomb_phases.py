@@ -1,4 +1,5 @@
 #################################
+# 
 # CSC 102 Defuse the Bomb Project
 # GUI and Phase class definitions
 # Team: 
@@ -86,30 +87,22 @@ class Lcd(Frame):
 
             # Display image
             self._limage = Label(self, image=self.jungle_photo, bg="black")
-            self._limage.grid(row=0, column=1)
+            self._limage.grid(row=0, column=2)
             self._ltimer.grid(row=1, column=0, columnspan=3, sticky=W)
             
-# sienna
-if active_phases == 2:
-    # Load rainforest image
-    self.rainforest_img = Image.open("rainforest.jpeg")
-    self.rainforest_img = self.rainforest_img.resize((400, 250))
-    self.rainforest_photo = ImageTk.PhotoImage(self.rainforest_img)
+        # sienna
+        if active_phases == 2:
+            # Load rainforest image
+            self.rainforest_img = Image.open("rainforest.jpeg")
+            self.rainforest_img = self.rainforest_img.resize((400, 250))
+            self.rainforest_photo = ImageTk.PhotoImage(self.rainforest_img)
 
-    # Display image
-    self._image = Label(self, image=self.rainforest_photo, bg="black")
-    self._image.grid(row=0, column=1)
-
-    # Story text (optional but recommended)
-    self._status.set(
-        "You are in the rainforest and your arm starts hurting after touching a plant.\n"
-        "You are alone, but a capybara may help you find water.\n"
-        "You cannot speak. Send a message using binary code.\n"
-        "Enter the correct 4-digit binary code to continue."
-    )
+            # Display image
+            self._image = Label(self, image=self.rainforest_photo, bg="black")
+            self._image.grid(row=0, column=2)
 
     # Timer placement
-    self._timer.grid(row=1, column=0, columnspan=3, sticky=W)
+#     self._timer.grid(row=1, column=0, columnspan=3, sticky=W)
 
     # lets us pause/unpause the timer (7-segment display)
     def setTimer(self, timer):
@@ -277,9 +270,15 @@ class Wires(PhaseThread):
     def run(self):
         self._running = True
         
+        
         while self._running:
             # get current wire states from GUI
-            self._value = self._component.get_state()
+            self._value = []
+            for i in range(5):
+                self._value.append(self._component[i].value)
+            
+            
+            print(self._value)
             
             # check solution  
             if self._value == self._target:
@@ -288,9 +287,9 @@ class Wires(PhaseThread):
                 self._timer._value = 90
                 self._running = False
                 
-            else:
-                #self._
-                pass
+#             else:
+#                 #self._
+#                 pass
      
             sleep(0.1)
     
@@ -304,8 +303,8 @@ class Wires(PhaseThread):
 
 # the pushbutton phase
 class Button(PhaseThread):
-    def __init__(self, component_state, component_rgb, target, color, timer, name="Button"):
-        super().__init__(name, component_state, target)
+    def __init__(self, component_state, component_rgb, color, timer, name="Button"):
+        super().__init__(name, component_state)
         # the default value is False/Released
         self._value = False
         # has the pushbutton been pressed?
