@@ -83,7 +83,7 @@ def check_phases():
             keypad._running = False
             active_phases -= 1
             # Load rainforest image
-            gui.rainforest_img = Image.open("rainforest.jpg")
+            gui.rainforest_img = Image.open("rainforest.jpeg")
             gui.rainforest_img = gui.rainforest_img.resize((400, 250))
             gui.rainforest_photo = ImageTk.PhotoImage(gui.rainforest_img)
 
