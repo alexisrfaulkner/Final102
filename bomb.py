@@ -15,14 +15,11 @@ from bomb_phases import *
 # generates the bootup sequence on the LCD
 def bootup(n=0):
     gui._lscroll["text"] = (
-    "JUNGLE PHASE:\n\n"
-    "You run into a troop of monkeys.\n"
-    "They are trying to find someone to help save their species.\n"
-    "To prove you are educated, you must answer their question.\n\n"
-    "Enter the number of monkey species in the world.\n"
-    "Then convert it to BINARY using the keypad.\n\n"
-    "HURRY... a predator is getting closer.\n"
+    "Based on the 30-day simulation, which species still\n"
+    "maintains a positive hydration balance (> 0 L)\n"
+    "at the end of the investigation period?\n"
 )
+
     # configure the remaining GUI widgets
     gui.setup()
     # setup the phase threads, execute them, and check their statuses
