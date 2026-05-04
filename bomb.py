@@ -173,6 +173,9 @@ def turn_off():
 # initialize the LCD GUI
 window = Tk()
 gui = Lcd(window)
+# initialize the bomb strikes and active phases
+strikes_left = NUM_STRIKES
+active_phases = NUM_PHASES
 
 
 # "boot" the bomb
