@@ -281,9 +281,9 @@ class Wires(PhaseThread):
                 self._timer._value = 90
                 self._running = False
                 
-            else:
-                #self._
-                pass
+#             else:
+#                 #self._
+#                 pass
      
             sleep(0.1)
     
