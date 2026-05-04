@@ -6,7 +6,7 @@
 
 # constants
 DEBUG = False        # debug mode?
-RPi = True           # is this running on the RPi?
+RPi = False           # is this running on the RPi?
 SHOW_BUTTONS = False # show the Pause and Quit buttons on the main LCD GUI?
 COUNTDOWN = 90      # the initial bomb countdown value (seconds)
 NUM_PHASES = 4       # the total number of initial active bomb phases
@@ -115,30 +115,29 @@ def genKeypadTarget():
 # generate the color of the pushbutton (which determines how to defuse the phase)
 button_color = choice(["R", "G", "B"])
 
-def genButtonTarget():
-    # TODO
-    global button_color
-    # Create your own logic of making a Button target
-    # appropriately set the target (R is None)
-    b_target = None
-#     if(button_color == b_target):
-#         return b_target
+# def genButtonTarget():
+#     # TODO
+#     global button_color
+#     # Create your own logic of making a Button target
+#     # appropriately set the target (R is None)
 #     b_target = None
-#     # G is the first numeric digit in the serial number
-    if (button_color == "G"):
-        return [ n for n in serial if n.isdigit() ][0]
-    # B is the last numeric digit in the serial number
-    elif (button_color == "B"):
-        return [ n for n in serial if n.isdigit() ][-1]
-
-    return b_target
+# #     if(button_color == b_target):
+# #         return b_target
+# #     b_target = None
+# #     # G is the first numeric digit in the serial number
+#     if (button_color == "G"):
+#         return [ n for n in serial if n.isdigit() ][0]
+#     # B is the last numeric digit in the serial number
+#     elif (button_color == "B"):
+#         return [ n for n in serial if n.isdigit() ][-1]
+# 
+#     return b_target
 
 ###############################
-serial = genSerial()
 toggles_target = genTogglesTarget()
 wires_target = genWiresTarget()
 keypad_target = genKeypadTarget()
-button_target = genButtonTarget()
+# button_target = genButtonTarget()
 jungle_target = "101011000"
 
 # set the bomb's LCD bootup text
