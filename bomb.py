@@ -76,12 +76,12 @@ def check_phases():
         gui._lkeypad["text"] = "Your Answer (Binary): " + str(keypad)
 
         if (keypad._defused):
-        keypad._running = False
-        active_phases -= 1
+            keypad._running = False
+            active_phases -= 1
 
         elif (keypad._failed):
-        keypad._failed = False
-        keypad._value = ""
+            keypad._failed = False
+            keypad._value = ""
     # check the wires
     if (wires._running):
         # update the GUI
