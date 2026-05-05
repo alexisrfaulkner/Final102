@@ -172,5 +172,7 @@ elif active_phases == 2:
 #lexi
 else:
     boot_text = f
-boot_text = f"You start swimming and find a horseshoe crab stuck under a rock. \nYou want to help but need to mentally prepare yourself to see the blood if anything goes wrong. \nSet the button to the color you will not see from a horseshoe crab’s blood.\n"\
+boot_text = f"You start swimming and find a horseshoe crab stuck under a rock. \n"
+"You want to help but need to mentally prepare yourself to see the blood if anything goes wrong. \n"
+"Set the button to the color you will not see from a horseshoe crab’s blood.\n"
             
