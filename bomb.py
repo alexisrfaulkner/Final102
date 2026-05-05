@@ -90,6 +90,14 @@ def check_phases():
             # Display image
             gui._image = Label(gui, image=gui.rainforest_photo, bg="black")
             gui._image.grid(row=0, column=2)
+            
+            "You are in the rainforest and your arm starts hurting after touching a plant.\n"
+            "You are alone, but a nearby capybara may help you find water. \n\n"
+            "You cannot speak so you must communicate using numbers.\n"
+            "The capybara is trying to say: HELP.\n\n"
+            "Convert HELP into binary.\n"
+            "Use only the last number of each 8-bit binary code of each letter. \n\n"
+            "Set the toggle switches to match each value in order to proceed.\n" 
 
     # check the wires
     if (wires._running):
@@ -111,8 +119,12 @@ def check_phases():
             gui._ltimer.grid(row=1, column=0, columnspan=3, sticky=W)
             
             gui._lscroll["text"] = (
-            "BANANA\n"
-            "BANANA\n"
+            "You run into a troop of monkeys.\n"
+            "They are trying to find someone to help save their species.\n"
+            "To prove you are educated, you must answer their question.\n\n"
+            "Enter the number of monkey species in the world.\n"
+            "Then convert it to BINARY using the keypad.\n\n"
+            "HURRY... a predator is getting closer.\n\n"
 
             )
 
