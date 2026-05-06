@@ -158,10 +158,18 @@ def check_phases():
             toggles._running = False
             active_phases -= 1
             
-        
-            #Final Picture gui goes here !!!!
-            ## Put Sea.gif here
+        self.phase_photo = ImageTk.PhotoImage(file='sea.gif')
             
+        self._image = Label(self, image=self.phase_photo, bg='black')
+        self._image.grid(row=0, column=2, pady=10)
+        
+        gui._lscroll["text"] = (
+        f"SEA PHASE: \n\n"
+        "You start swimming and find a horseshoe crab stuck under a rock. \n"
+        "You want to help but need to mentally prepare yourself to see the blood if anything goes wrong. \n"
+        "Set the button to the color you will not see from a horseshoe crab’s blood.\n"
+        )
+
             
         # the phase has failed -> strike
 #         elif (toggles._failed):
